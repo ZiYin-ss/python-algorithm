@@ -34,7 +34,7 @@ class StaffNotice(Notice):  # 发布者对象
     @company_info.setter  # 负责写 就是写这个属性
     def company_info(self, info):
         self.company_info = info
-        self.notify()  #推送
+        self.notify()  # 推送
 
 
 class Staff(Observer):  # 员工 具体的订阅者
@@ -48,6 +48,7 @@ class Staff(Observer):  # 员工 具体的订阅者
         # 传进来的实例是不是就是StaffNotice的实例 它里面刚刚不是改了company_info
         #  是不是执行这个函数 更改我们自己的company_info 和StaffNotice中的company_info一样
         #  不难 很好理解 思想很好 可以借鉴
+
 
 notice = StaffNotice("初始公司信息")
 s1 = Staff()
