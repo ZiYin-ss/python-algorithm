@@ -13,8 +13,10 @@ class Stack:
             return self.stack[-1]  # 这个地方是列表的-1 展示列表的最后一个元素 但不弹出
         else:
             return None
+
     def is_empty(self):
-        return len(self.stack)==0
+        return len(self.stack) == 0
+
 
 stack = Stack()
 stack.push(1)
@@ -34,21 +36,22 @@ print(stack.stack)
 #  要是不一样或者为空栈 还有值 不就是false
 #  最后判断栈是空的话就是匹配完了呗  就true
 def brance_match(s):
-    match = {'}':'{',']':'[',')':'('}
+    match = {'}': '{', ']': '[', ')': '('}
     stack = Stack()
     for ch in s:
-        if ch in {'(','[','{'}:
+        if ch in {'(', '[', '{'}:
             stack.push(ch)
         else:
             if stack.is_empty():
                 return False
             elif stack.get_top() == match[ch]:
                 stack.pop()
-            else: #stack.get_top() != match[ch]
+            else:  # stack.get_top() != match[ch]
                 return False
     if stack.is_empty():
         return True
     else:
         return False
+
 
 print(brance_match('({})'))
