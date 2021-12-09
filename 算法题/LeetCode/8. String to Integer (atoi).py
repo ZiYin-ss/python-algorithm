@@ -20,6 +20,7 @@ import re
     这道题最难的地方在于你能不能想到用正则 对正则判断开头是不是字母 然后用search匹配符合规则的(从前面开始的数字字符串)
 """
 
+
 class Solution:
     def myAtoi(self, s: str) -> int:
         stripS = s.strip()
@@ -33,7 +34,7 @@ class Solution:
             s1 = re.search('\-*\+*\d+', stripS).group()
             print(s1)
 
-        if s1[0:2] == "--" or s1[0:2] == "-+" or s1[0:2] == "++": #多个加加减减其实和两个是一样的
+        if s1[0:2] == "--" or s1[0:2] == "-+" or s1[0:2] == "++":  # 多个加加减减其实和两个是一样的
             return 0
 
         result = int(s1)  # "-13" int之后是-13 注意
@@ -41,9 +42,11 @@ class Solution:
             return 2147483647 if result > 2147483647 else result
         else:
             return -2147483648 if result < -2147483648 else result
+
     """
         主要是匹配太多了 其他的还好
     """
+
 
 a = Solution()
 print(a.myAtoi('a13549867'))
