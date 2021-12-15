@@ -14,7 +14,6 @@
 class Solution:
     def threeSum(self, nums):
         n = len(nums)
-        res = []
         if not nums or n < 3:
             return []
         nums.sort()
