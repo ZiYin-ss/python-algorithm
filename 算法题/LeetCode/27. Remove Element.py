@@ -15,7 +15,7 @@ class Solution:
     def removeElement(self, nums: [int], val: int) -> int:
         i, last = 0, len(nums) - 1
         while i <= last:
-            if nums[i] == val:
+            if nums[i] == val:  # 实在不理解就画图 就很好理解 前后比 交换了就是last减一 反之亦然
                 nums[i], nums[last] = nums[last], nums[i]  #这个是核心
                 last -= 1  # 不是真正删除 但是说最后一个永远访问不到了 每这样循环一下就多一个
             else:
