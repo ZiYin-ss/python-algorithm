@@ -1,29 +1,51 @@
 #  顺序查找
-def linear_search(li,val):
-    for index,value in enumerate(li):
+"""
+from bisect import bisect
+    用bisect.insort插入新元素
+        排序很耗时，因此在得到一个有序序列之后，我们最好能够保持它的有序。bisect.insort就是为这个而存在的
+        insort(seq, item)把变量item插入到序列seq中，并能保持seq的升序顺序
+    bisect(list,item,[low,[high]])
+        返回要插入item点的索引，如果item在列表中了，则返回该条目的右边索引
+    bisect_right(list,item,[left,[right]])
+        同上
+    bisect_left(list,item,[left,[right]])
+        返回要插入item点的索引，如果item在列表中了，则返回该条目的左边索引
+    insort(list,item,[left,[right]])
+        不返回索引，直接插入进去，如果有重复的item，则插入到右边
+    insort_right(list,item,[left,[right]])
+        同上
+    insort_left(list,item,[left,[right]])
+        不返回索引，直接插入进去，如果有重复的item，则插入到左边
+"""
+
+
+def linear_search(li, val):
+    for index, value in enumerate(li):
         if val == value:
             return index
     else:
         return None
 
+
 # 二分查找
-def binary_search(li,val):
+def binary_search(li, val):
     left = 0
-    right = len(li)-1
-    while left <= right: #候选区有值
-        mid = (left+right)//2   # 9//2=4  10//2=5 这个是下标
+    right = len(li) - 1
+    while left <= right:  # 候选区有值
+        mid = (left + right) // 2  # 9//2=4  10//2=5 这个是下标
         print(mid)
-        if li[mid] ==val:
+        if li[mid] == val:
             return mid
-        elif li[mid]>val:   # 待查找的值在mid的左侧
-            right = mid-1
-        elif li[mid] <val:  # 待查找的值在mid的右侧
-            left = mid +1
+        elif li[mid] > val:  # 待查找的值在mid的左侧
+            right = mid - 1
+        elif li[mid] < val:  # 待查找的值在mid的右侧
+            left = mid + 1
     else:
         return None
 
-li = [1,2,3,4,5,6,7,8,9]
-binary_search(li,3)  # 其实这个地方 看是很难看的 就是直接自己一步一步的走这个程序就可以了啊
+
+li = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+binary_search(li, 3)  # 其实这个地方 看是很难看的 就是直接自己一步一步的走这个程序就可以了啊
 
 print(li.index(2))
 
