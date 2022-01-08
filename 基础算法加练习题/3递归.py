@@ -7,15 +7,12 @@ def hanoi(n, a, b, c):
     :param c  这三个是盘子的名称:
     :return:
     """
-    # 这个地方要是会断点调试直接可以看清 但是我不会
     #  但是不影响你对这个地方的理解 就把递归还是个函数走进去看执行了什么 里面还有函数 走进去看执行了什么
     if n > 0:
         #  n-1个盘子 经过从a经过c移动到b
         hanoi(n - 1, a, c, b)
         print("moving from %s to %s" % (a, c))
         hanoi(n - 1, b, a, c)
-
-
 
 
 hanoi(64, "A", "B", "C")

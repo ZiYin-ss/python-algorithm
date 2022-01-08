@@ -19,6 +19,7 @@ from bisect import bisect
 """
 
 
+# 线性查找 顺序查找
 def linear_search(li, val):
     for index, value in enumerate(li):
         if val == value:

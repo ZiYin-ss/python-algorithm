@@ -134,13 +134,13 @@ class BST:
                 else:
                     self.__remove_node_1(min_node)
 
+
 li = list(range(0, 500, 2))
 random.shuffle(li)
 tree = BST(li)
 print(tree.query_no_rec(4).data)
 tree.delete(4)
 print(tree.query_no_rec(4))
-
 
 """ 
     二叉搜索树 BST

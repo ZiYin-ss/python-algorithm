@@ -4,6 +4,7 @@ class Node:
         self.next = None
 
 
+# 头插法
 def create_linklist_head(li):
     head = Node(li[0])
     for element in li[1:]:
@@ -13,6 +14,7 @@ def create_linklist_head(li):
 
     return head
 
+# 尾插法
 def create_linklist_tail(li):
     head = Node(li[0])
     tail = head

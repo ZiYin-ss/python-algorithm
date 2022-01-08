@@ -80,7 +80,7 @@ def print_r(path):
 def maze_path_queue(x1, y1, x2, y2):
     queue = deque()
     queue.append((x1, y1, -1))
-    path=[]
+    path = []
     while len(queue) > 0:  # 队空说明是死胡同
         curNode = queue.pop()  # 这个里面是存着节点路径
         path.append(curNode)  # 这个里面存着的是所有的路径
@@ -99,7 +99,6 @@ def maze_path_queue(x1, y1, x2, y2):
     else:
         print("没有")
         return False
-
 
 
 maze_path_queue(1, 1, 8, 8)

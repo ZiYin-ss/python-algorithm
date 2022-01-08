@@ -67,33 +67,34 @@ class LinkList:
             每个位置都连接一个链表 当冲突的时候 冲突的元素将被加到该位置链表的最后
     常见的哈希函数
         除法哈希法(k%m)，乘法哈希法，全域哈希法
-        具体的实现就不说了 还有很多 直到就可以
+        具体的实现就不说了 还有很多 知道就可以
 """
 
+
 class HashTable:
-    def __init__(self,size = 100):
+    def __init__(self, size=100):
         self.size = size
         self.T = [LinkList() for i in range(self.size)]
 
-    def h(self,k):
-        return k%self.size
+    def h(self, k):
+        return k % self.size
 
-    def insert(self,k):
+    def insert(self, k):
         i = self.h(k)
         if self.find(k):
             print("重复插入了")
-        else: # 这个地方不是说直接就键值对了 而是先搞搞一个元素的插入 就这了
+        else:  # 这个地方不是说直接就键值对了 而是先搞搞一个元素的插入 就这了
             self.T[i].append(k)
 
-    def find(self,k):
+    def find(self, k):
         i = self.h(k)  # 这个i是不是就是经过加工之后这个k  所在的T的列表的那个索引啊
-        return  self.T[i].find(k)  # 是LinkList的实例 有一个find方法查找这个链表里面有没有这个值啊
+        return self.T[i].find(k)  # 是LinkList的实例 有一个find方法查找这个链表里面有没有这个值啊
+
 
 ht = HashTable()
 ht.insert(0)
 ht.insert(1)
-print(",".join(map(str,ht.T)))
-
+print(",".join(map(str, ht.T)))
 
 """
     哈希表用的最多的就是 集合和字典 
