@@ -22,7 +22,7 @@ class Solution:
             n = nums[:i] + nums[i + 1:]  # 这个地方才是精髓 你看这个n是什么 是不是除了当前循环的数之外所有nums的值啊
             for y in self.permute(n):  # 把n放进去这个函数 循环执行
                 answer.append([num] + y)  # 这个地方会是走到最后 if len <= 1的时候 返回的值 加上了
-
+                
         return answer
 
 
