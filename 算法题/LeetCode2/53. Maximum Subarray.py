@@ -7,6 +7,7 @@
     这道题就在于你能不能想到用局部最大值和整体最大值 本来要求返回的就是数而不是组合 懂吗
 """
 
+
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         if max(nums) < 0:
@@ -17,6 +18,7 @@ class Solution:
             global_max = max(global_max, local_max)
 
         return global_max
+
 
 """
     这道题其实特别简单 就是思路的问题 
