@@ -14,6 +14,12 @@ class Solution:
         if head:
             if head.next:
                 if head.next.next:
+                    n = 0
+                    z = head
+                    while z:
+                        n += 1
+                        z = z.next
+                    k = k % n
                     while k > 0:
                         tmp = head.next
                         while tmp.next.next is not None:
@@ -30,7 +36,7 @@ class Solution:
                         head.next = None
                         head = tmp
         return head
-# 这个是超时的不成熟的代码 但是可以用 就是超时
+# 可以用了
 
 # 从这个地方开始就不写解题思路了  不需要了 能看的懂题目 也能知道大概什么意思了 有想法
 # Definition for singly-linked list.
@@ -58,10 +64,13 @@ class Solution1:
         while p2 and p2.next:  # 这个地方按照样例理解 其实for之后 偏移就写出了
             p1 = p1.next
             p2 = p2.next
-        output = p1.next  # 写出之后不就是说 走到末尾走几个 p1更新几个就可以了啊
+        output = p1.next
+        # 为什么要平移 其实是说 要是for四次的话 是不是就是最后一位 那么掐断之 是不是刚好是23451啊 对不 前面和后面相加其实是刚好的
+        # 刚好和位置对应把
         p1.next = None
         p2.next = head
         return output
+
 
 """
     其实这个是最终版的 
