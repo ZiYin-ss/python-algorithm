@@ -7,4 +7,26 @@
 """
 
 
+class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid) -> int:
+        if not obstacleGrid:
+            return 0
+        m, n = len(obstacleGrid), len(obstacleGrid[0])
+        cache = [[0] * n for _ in range(m)]
+        cache[0][0] = 1
+        for i in range(m):
+            for j in range(n):
+                if obstacleGrid[i][j] == 1:
+                    cache[i][j] = 0
+                else:
+                    if i > 0:
+                        cache[i][j] += cache[i - 1][j]
+                    if j > 0:
+                        cache[i][j] += cache[i][j - 1]
+        return cache[-1][-1]
 
+
+"""
+    这道题思路和62是一样的 只不过就是说 你要把石块位置的路标0就可以了
+    还是上面加前面
+"""
