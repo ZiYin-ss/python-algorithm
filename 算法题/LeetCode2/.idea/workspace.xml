@@ -17,8 +17,7 @@
       <change beforePath="$PROJECT_DIR$/../LeetCode1/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../LeetCode1/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../LeetCode1/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LeetCode2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LeetCode2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -101,7 +101,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648263565313</updated>
-      <workItem from="1648263567070" duration="2254000" />
+      <workItem from="1648263567070" duration="2329000" />
+      <workItem from="1648267941941" duration="78000" />
+      <workItem from="1648552762552" duration="602000" />
     </task>
     <servers />
   </component>
