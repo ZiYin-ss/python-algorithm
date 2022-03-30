@@ -11,5 +11,29 @@
 """
 
 
+class Solution:
+    def fullJustify(self, words, maxWidth: int):
+        # res 返回结果
+        # line 缓存每一行的单词
+        # counter统计当前进入line的单词总长度
+        res, line, counter = [], [], 0
+        for word in words:
+            if counter + len(word) + len(line) > maxWidth:  # 为什么要加上len(line)呢 词之间最少空格数是一个
+                for i in range(maxWidth - counter):
+                    line[i % max(len(line) - 1, 1)] += ' '  # 其实就说放到前两个数中
+                res.append(''.join(line))
+                line, counter = [], 0
+            line += [word]
+            counter += len(word)
+        return res + [' '.join(line).ljust(maxWidth)]  # 最后一行左对齐 而且最后一行是不会进入if判断的 ljust默认补空格
 
 
+words = ["This", "is", "an", "example", "of", "text", "justification."]
+maxWidth = 16
+
+a = Solution()
+print(a.fullJustify(words, maxWidth))
+
+"""
+    这是一个典型的贪心算法  就是放尽可能多的  余数用的很妙 而且最后一个还不会插入空格 1-len(line)-1的位置插入空格 牛逼
+"""
