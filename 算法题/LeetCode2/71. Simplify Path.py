@@ -11,3 +11,56 @@
 """
 
 
+class Solution:  # 本来很简单 对吧 搞这些复杂的东西
+    def simplifyPath(self, path: str) -> str:
+        tmp = ''
+        for i in range(len(path)):  # 处理多个/
+            if i > 0 and path[i] == path[i - 1] == "/":
+                continue
+            tmp += path[i]
+        tmp = tmp.rstrip('/')  # 去除最后一个字符串
+        if tmp[0] != "/" or tmp[1] == tmp[2] == ".":  # 处理根目录指向问题
+            return "/"
+        print(tmp)
+        ttmp = '/'
+        lst = []
+        for i in range(len(tmp)):  # "/home/foo"
+            if tmp[i] != "/":
+                ttmp += tmp[i]
+            else:
+                if len(lst) > 0 and ttmp == "/..":
+                    lst.pop(-1)
+                    ttmp = "/"
+                    continue
+                if len(lst) == 0 and ttmp == "/..":
+                    ttmp = "/"
+                    continue
+                if ttmp == "/":
+                    continue
+                if ttmp == "/.":
+                    ttmp = "/"
+                    continue
+                lst.append(ttmp)
+                ttmp = "/"
+        if len(lst) > 0 and ttmp == "/..":
+            lst.pop(-1)
+        if ttmp != '/.' or ttmp != '/..':
+            lst.append(ttmp)
+        print(lst)
+        return ''.join(lst)
+
+
+class Solution1:  # 本来很简单 对吧 搞这些复杂的东西
+    def simplifyPath(self, path: str) -> str:
+        ans = []
+        for p in path.split("/"):
+            if p == ".." and ans:
+                ans.pop()
+            elif p not in "..":
+                ans.append(p)
+        return "/" + "/".join(ans)
+
+
+path = "/a/../../b/../c//.//"
+a = Solution1()
+print(a.simplifyPath(path))
